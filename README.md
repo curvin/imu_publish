@@ -5,7 +5,7 @@
 - `cd ~/catkin_ws/src`
 
 ## 在src文件夹下git down本项目
-- `git clone `
+- `git clone https://github.com/curvin/imu_publish.git`
 
 ## 查看串口，授予权限
 - `ls -l /dev/ttyUSB*`
