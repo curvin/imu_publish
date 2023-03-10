@@ -207,8 +207,8 @@ include_directories(
 
 
 
-link_directories(/home/spacexl/ROS/NAV100/src/imu_publish/include/imu_publish)
-include_directories(/home/spacexl/ROS/NAV100/src/imu_publish/include/imu_publish)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/imu_publish)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/imu_publish)
 
 add_executable(imu_data src/imu_data.cpp src/an_packet_protocol.c  src/rs232.c src/spatial_packets.c)    
 target_link_libraries(imu_data ${catkin_LIBRARIES})
