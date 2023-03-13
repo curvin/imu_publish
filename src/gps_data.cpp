@@ -86,10 +86,10 @@ int main(int argc, char **argv)
 	an_decoder_initialise(&an_decoder);
 
 	//*********************************************************************************************************//
-	ros::init(argc, argv, "imu");
+	ros::init(argc, argv, "gps");
 
 	ros::NodeHandle n;
-	ros::Publisher IMU_pub = n.advertise<sensor_msgs::Imu>("imu_data", 20);
+	ros::Publisher IMU_pub = n.advertise<sensor_msgs::Imu>("gps_data", 20);
 	ros::Rate loop_rate(10);
 	sensor_msgs::Imu imu_data;
 	while (ros::ok())
@@ -141,9 +141,9 @@ int main(int argc, char **argv)
 					ROS_INFO("Packet ID %u of Length %u\n", an_packet->id, an_packet->length);
 				}
 
-				ROS_INFO("Orientation X: %f Y: %f Z: %f", imu_data.orientation.x, imu_data.orientation.y, imu_data.orientation.z);
-				ROS_INFO("Accelerometers X: %f Y: %f Z: %f", imu_data.linear_acceleration.x, imu_data.linear_acceleration.y, imu_data.linear_acceleration.z);
-				ROS_INFO("Gyroscopes X: %f Y: %f Z: %f", imu_data.angular_velocity.x, imu_data.angular_velocity.y, imu_data.angular_velocity.z);
+				ROS_INFO("Latitude=%f", Latitude);
+				ROS_INFO("Longitude=%f", Longitude);
+				ROS_INFO("Height=%f", Height);
 				IMU_pub.publish(imu_data);
 
 				/* Ensure that you free the an_packet when your done with it or you will leak memory */
