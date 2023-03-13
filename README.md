@@ -26,5 +26,5 @@
 - 在工程目录下
   - `source devel/setup.bash`
   - `rosrun imu_publish gps_data`
-  - 
+  
 ***装置需要外接航模电池供电***
